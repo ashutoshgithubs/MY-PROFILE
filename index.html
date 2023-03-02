@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Ashutosh-Profile</title>
+    <style>
+   
+        .btn1{
+            transform: scale(1);
+            transition: transform .5s ease-in
+        }
+
+        .btn1:hover{
+            transform: scale(1.009);
+            background-color:white;
+            color:black;
+        }
+        .btn2{
+            transform: scale(1);
+            transition: transform .5s ease-in
+        }
+
+        .btn2:hover{
+            transform: scale(1.009);
+            background-color:white;
+            color:black;
+        }
+        .screen {
+            position: fixed;
+            background-color: #5f5f5fbf;
+            top: 0;
+            opacity: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            pointer-events: none;
+            transition: 0.5s ease-in-out;
+  }
+  .overlayactive {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  .circle1 {
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #d84869;
+    background: linear-gradient(-25deg, #d84869, #f46641);
+    animation: Animation1 8s infinite;
+  }
+  
+  @keyframes Animation1 {
+    50% {
+      left: 33%;
+      top: 4%;
+      scale: 1.11;
+    }
+  }
+  
+  .circle2 {
+    position: absolute;
+    width: 10em;
+    height: 10em;
+    bottom: 5%;
+    right: 30%;
+    
+    border-radius: 50%;
+    box-shadow: 0 0 50px #5648d8;
+    background: linear-gradient(-25deg, #5648d8, #8641f4);
+    animation: Animation2 5s infinite;
+  }
+  @keyframes Animation2 {
+    50% {
+      bottom: 6%;
+      right: 31%;
+    }
+  }
+    </style>
+</head>
+<body class="bg-black">
+    <section class="relative h-[100vh] w-[100vw] flex flex-col justify-center items-center">
+        <!--Circle 1-->
+        <div class="circle1 hidden md:block"></div>
+           <!--Circle 2-->
+        <div class="circle2 hidden md:block"></div>
+    
+              <!--Container-->
+            <div class=" max-w-lg card  flex flex-col justify-evenly h-1/2 md:h-96 px-8 py-2 items-center border-solid  border-2 border-gray-600 rounded-md shadow-lg shadow-cyan-500/50 text-white backdrop-opacity-5 bg-black">
+                <!--Image-->
+                <img src="./images/myphoto.jpg" alt="image" class="h-32 w-32 border-2 rounded-full border-gray-600">
+                <!--Heading-->
+                <p class="text-xl font-bold text-center">Ashutosh Kumar</p>
+                <!--Subheading-->
+                <p class="text-lg font-normal italic break-word text-center ">IEM-KOLKATA | SOPHOMORE | ASPIRING MERN DEVELOPER | BLOCKCHAIN ENTHUSIAST </p>
+                <!--Button container-->
+                <div class="flex flex-col md:flex-row gap-3 ">
+                    <!--Button 1-->
+                    <button onclick="openModal()" class="border-2 rounded-md px-2 py-1 btn1">
+                        <i class="fa-solid fa-share pr-1"></i>Share My Profile</button>
+                    <!--Button 2-->
+                    <button class="border-2 rounded-md px-8 py-1 btn2"><a href="https://www.linkedin.com/in/ashutosh-kumar-2b08a3226/" >Follow Me</a></button>
+                </div>
+                
+            </div>
+
+            <!--Modal Component-->
+            <div  class="modal scale-0 bg-black flex flex-col items-between border-solid  border-2 border-gray-600 rounded-md  px-8 py-2 absolute top-72 z-10 w-4/12 ">
+                <div class="flex justify-between items-between pb-2 border-b-2 border-gray-600">
+                    <!--Heading-->
+                    <div class="text-white font-bold text-2xl">Share My Profile</div>
+                    <div>
+                        <i onclick="closeModal()" class="fa-solid fa-xmark cursor-pointer text-2xl text-white"></i>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-lg text-white pb-2 pt-1">Share this via</div>
+                    <!--Social icons-->
+                    <div class="flex justify-between items-center mt-1 mb-2  ">
+                        <a href="https://www.facebook.com/index.php" class="border-solid  border border-blue-400 rounded-full p-5 w-8 h-8 flex justify-center items-center group hover:bg-blue-600">
+                            <i class="fa-brands fa-facebook-f text-2xl text-blue-600 group-hover:text-white "></i>
+                        </a>
+                        <a href="https://twitter.com/Ashubhai_01?s=09" class="border-solid  border border-sky-300 rounded-full p-5 w-8 h-8 flex justify-center items-center group hover:bg-sky-400">
+                            <i class="fa-brands fa-twitter  text-2xl text-sky-400 group-hover:text-white"></i>
+                        </a>
+                        <a href="https://www.instagram.com/singhashu942/" class="border-solid  border  border-red-500 rounded-full p-5 w-8 h-8 flex justify-center items-center group hover:bg-red-500">
+                             <i class="fa-brands fa-instagram  text-2xl text-red-500 group-hover:text-white"></i>
+                        </a>
+                        <a href="https://web.whatsapp.com/" class="border-solid  border border-green-500 rounded-full p-5 w-8 h-8 flex justify-center items-center group hover:bg-green-500">
+                            <i class="fa-brands fa-whatsapp  text-2xl text-green-500 group-hover:text-white "></i>
+                        </a>
+                        <a href="https://telegram.org/" class="border-solid  border border-fuchsia-600 rounded-full p-5 w-8 h-8 flex justify-center items-center group hover:bg-fuchsia-400">
+                            <i class="fa-brands fa-telegram  text-2xl text-fuchsia-400 group-hover:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+         <!-- Overlay -->
+        <div class="screen" onclick="closeModal()"></div>
+      
+    </section>
+    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+</body>
+</html>
